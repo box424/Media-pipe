@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pipe 表情辨識應用</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😊 表情辨識應用</h1>
+            <p class="subtitle">使用攝影機進行實時表情偵測</p>
+        </header>
+
+        <div class="main-content">
+            <div class="video-section">
+                <div class="video-container">
+                    <video id="video" playsinline></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">開啟相機</button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>關閉相機</button>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="emotion-display">
+                    <div class="emoji-large" id="emotionEmoji">😐</div>
+                    <div class="emotion-name" id="emotionName">等待中...</div>
+                    <div class="emotion-confidence" id="emotionConfidence">信心度: 0%</div>
+                </div>
+
+                <div class="stats-panel">
+                    <h3>即時統計</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">檢測狀態:</span>
+                        <span class="stat-value" id="detectionStatus">未開始</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">面部檢測:</span>
+                        <span class="stat-value" id="faceDetected">未檢測到</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">當前表情:</span>
+                        <span class="stat-value" id="currentEmotion">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">音聲反饋:</span>
+                        <span class="stat-value" id="voiceFeedbackStatus">已啟用</span>
+                    </div>
+                </div>
+
+                <div class="settings-panel">
+                    <h3>設定</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="voiceFeedbackToggle" checked>
+                        啟用語音回饋
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showCanvasToggle" checked>
+                        顯示偵測框
+                    </label>
+                    <div class="slider-group">
+                        <label for="confidenceSlider">信心度閾值</label>
+                        <input type="range" id="confidenceSlider" min="0.3" max="0.9" step="0.1" value="0.5">
+                        <span id="confidenceValue">0.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="emotion-log">
+            <h3>表情歷史</h3>
+            <div id="emotionHistory" class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- 引入 face-api.js -->
+    <script async src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+
+    <!-- 引入應用邏輯 -->
+    <script src="app.js"></script>
+</body>
+</html>
