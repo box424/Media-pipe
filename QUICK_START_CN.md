@@ -7,6 +7,7 @@
 2. 右鍵點擊 `index.html`
 3. 選擇 "Open with Live Server"
 
+
 ### 🐍 使用 Python
 ```bash
 cd /workspaces/Media-pipe

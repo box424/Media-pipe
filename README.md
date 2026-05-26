@@ -42,6 +42,7 @@ http-server -p 8000
 1. Install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension
 2. Right-click on `index.html` → "Open with Live Server"
 
+
 ## 📋 System Requirements
 
 - Modern browser with WebRTC support

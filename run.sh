@@ -36,6 +36,7 @@ if command -v node &> /dev/null; then
     echo "正在啟動簡單HTTP服務器..."
     echo ""
     
+    
     # 創建簡單的Node.js服務器
     cat > temp_server.js << 'EOF'
 const http = require('http');

@@ -6,6 +6,7 @@ let lastEmotionTime = 0;
 const EMOTION_COOLDOWN = 2000; // 2秒冷卻時間
 let modelsLoaded = false;
 
+
 // 表情配置
 const EMOTIONS = {
     neutral: { emoji: '😐', name: '中立', color: '#6c757d' },

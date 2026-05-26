@@ -6,6 +6,7 @@ echo   Media Pipe 表情辨識應用 - 本地測試服務器
 echo ==================================================
 echo.
 
+
 REM 檢查Python
 where python >nul 2>nul
 if %ERRORLEVEL% EQU 0 (
