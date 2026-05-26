@@ -54,6 +54,7 @@ http-server -p 8000
 
 ## 🎮 Usage Guide
 
+
 1. **Start Application** - Click "開啟相機" (Open Camera) button
 2. **Grant Permissions** - Allow browser to access camera/microphone
 3. **Face the Camera** - Express natural emotions toward the camera
